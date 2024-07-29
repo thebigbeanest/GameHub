@@ -1,0 +1,62 @@
+/* Container for the entire page */
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  /* Styling for the input fields */
+  .input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .input-box {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  textarea,
+  input[type="text"] {
+    width: 100%;
+    font-family: monospace;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    resize: vertical; /* Allow vertical resizing */
+    overflow: auto; /* Add scrollbars when needed */
+  }
+  
+  /* Styling for the code input areas */
+  .code-container {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+  
+  .code-box {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex: 1; /* Ensure equal width for each box */
+  }
+  
+  textarea {
+    height: 300px; /* Adjust height as needed */
+  }
+  
+  /* Button container styling */
+  .button-container {
+    display: flex;
+    gap: 10px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
