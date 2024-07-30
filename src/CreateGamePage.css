@@ -1,62 +1,76 @@
 /* Container for the entire page */
 .container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding: 20px;
-  }
-  
-  /* Styling for the input fields */
-  .input-container {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  .input-box {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-  }
-  
-  textarea,
-  input[type="text"] {
-    width: 100%;
-    font-family: monospace;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 10px;
-    resize: vertical; /* Allow vertical resizing */
-    overflow: auto; /* Add scrollbars when needed */
-  }
-  
-  /* Styling for the code input areas */
-  .code-container {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-  }
-  
-  .code-box {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    flex: 1; /* Ensure equal width for each box */
-  }
-  
-  textarea {
-    height: 300px; /* Adjust height as needed */
-  }
-  
-  /* Button container styling */
-  .button-container {
-    display: flex;
-    gap: 10px;
-  }
-  
-  button {
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-  }
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  background-color: var(--background-color);
+  color: var(--text-color-light);
+}
+
+/* Styling for the input fields */
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.input-box {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+textarea,
+input[type="text"] {
+  width: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  border: 1px solid var(--input-border-color);
+  border-radius: 8px;
+  padding: 10px;
+  background-color: var(--input-bg-color);
+  color: var(--text-color-light);
+  resize: vertical; /* Allow vertical resizing */
+  overflow: auto; /* Add scrollbars when needed */
+}
+
+/* Styling for the code input areas */
+.code-container {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.code-box {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex: 1; /* Ensure equal width for each box */
+}
+
+textarea {
+  height: 300px; /* Adjust height as needed */
+}
+
+/* Button container styling */
+.button-container {
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background-color: var(--button-bg-color);
+  color: var(--text-color-light);
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+button:hover {
+  background-color: var(--button-hover-color);
+  border-color: var(--button-hover-color);
+}

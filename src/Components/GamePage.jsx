@@ -4,6 +4,8 @@ import { useParams } from 'react-router-dom';
 
 const GamePage = () => {
   const [game, setGame] = useState(null);
+  const [reviews, setReviews] = useState([]);
+  const [comments, setComments] = useState([]);
   const iframeRef = useRef(null);
   const { id } = useParams();
 
@@ -17,14 +19,34 @@ const GamePage = () => {
       }
     };
 
+    const fetchReviews = async () => {
+      try {
+        const response = await axios.get(`http://localhost:8000/games/${id}/reviews/`);
+        setReviews(response.data);
+      } catch (error) {
+        console.error('Error fetching reviews:', error);
+      }
+    };
+
+    const fetchComments = async () => {
+      try {
+        const response = await axios.get(`http://localhost:8000/games/${id}/comments/`);
+        setComments(response.data);
+      } catch (error) {
+        console.error('Error fetching comments:', error);
+      }
+    };
+
     fetchGame();
+    fetchReviews();
+    fetchComments();
   }, [id]);
 
   useEffect(() => {
     if (iframeRef.current && game) {
       const iframe = iframeRef.current;
       const document = iframe.contentDocument || iframe.contentWindow.document;
-      
+
       if (document) {
         const html = (game.html_code || '').replace(/\r\n/g, '\n');
         const css = (game.css_code || '').replace(/\r\n/g, '\n');
@@ -66,11 +88,23 @@ const GamePage = () => {
       />
       <div style={{ marginTop: '20px' }}>
         <h3>Reviews:</h3>
-        {/* Display reviews here */}
+        <ul>
+          {reviews.map(review => (
+            <li key={review.id}>
+              <p><strong>{review.user.username}:</strong> {review.content}</p>
+            </li>
+          ))}
+        </ul>
       </div>
       <div style={{ marginTop: '20px' }}>
         <h3>Comments:</h3>
-        {/* Display comments here */}
+        <ul>
+          {comments.map(comment => (
+            <li key={comment.id}>
+              <p><strong>{comment.user.username}:</strong> {comment.content}</p>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );
