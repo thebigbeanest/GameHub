@@ -1,26 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
+import Cookies from 'js-cookie';
 import { Editor } from '@monaco-editor/react';
 import '../CreateGamePage.css';
-
-
-
-
-function getCookie(name) {
-    let cookieValue = null;
-    if (document.cookie && document.cookie !== '') {
-      const cookies = document.cookie.split(';');
-      for (let i = 0; i < cookies.length; i++) {
-        const cookie = cookies[i].trim();
-        if (cookie.substring(0, name.length + 1) === name + '=') {
-          cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-          break;
-        }
-      }
-    }
-    return cookieValue;
-  }
-
 
 const CreateGamePage = () => {
   const [title, setTitle] = useState('');
@@ -54,10 +36,15 @@ const CreateGamePage = () => {
 
   const handleSubmit = async () => {
     try {
-      const csrfToken = getCookie('csrftoken');
+      const csrfToken = 'Q3C7jmSfbZL3SYrVTIIFCBP76BKiXA5D'//Cookies.get('csrftoken'); // Fetch CSRF token from cookie
+      console.log('CSRF Token:', csrfToken); // Log CSRF token for verification
+  
+      if (!csrfToken) {
+        throw new Error('CSRF token not found.');
+      }
   
       const response = await axios.post(
-        'http://127.0.0.1:8000/admin/GameHubApp/game/', // Make sure this is your correct API endpoint
+        'http://127.0.0.1:8000/games/', // Your API endpoint
         {
           title,
           description,
@@ -69,14 +56,15 @@ const CreateGamePage = () => {
         {
           headers: {
             'Content-Type': 'application/json',
-            'X-CSRFToken': csrfToken,
+            'X-CSRFToken': csrfToken,  // Add CSRF token to headers
           },
+          withCredentials: true,  // Include credentials in request
         }
       );
+  
       console.log('Game uploaded successfully:', response.data);
     } catch (error) {
       console.error('Error uploading game:', error);
-      // Optional: Display error message to the user
     }
   };
 
