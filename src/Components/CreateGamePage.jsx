@@ -36,7 +36,7 @@ const CreateGamePage = () => {
 
   const handleSubmit = async () => {
     try {
-      const csrfToken = 'Q3C7jmSfbZL3SYrVTIIFCBP76BKiXA5D'//Cookies.get('csrftoken'); // Fetch CSRF token from cookie
+      const csrfToken = Cookies.get('csrftoken'); // Fetch CSRF token from cookie
       console.log('CSRF Token:', csrfToken); // Log CSRF token for verification
   
       if (!csrfToken) {
@@ -51,7 +51,7 @@ const CreateGamePage = () => {
           html_code: htmlCode,
           css_code: cssCode,
           js_code: jsCode,
-          image_url: imageUrl,
+          thumbnail: imageUrl, // Use 'thumbnail' to store image URL
         },
         {
           headers: {

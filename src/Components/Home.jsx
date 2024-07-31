@@ -56,26 +56,26 @@ const Home = ({ reviews = [] }) => { // Provide a default empty array
 const styles = {
     container: {
         fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
-        color: '#f5f5f5',
-        backgroundColor: '#1e1e1e',
+        color: 'var(--text-color-light)',
+        backgroundColor: 'var(--background-color)',
         minHeight: '100vh',
         display: 'flex',
         flexDirection: 'column',
     },
     header: {
-        backgroundColor: '#333',
+        backgroundColor: 'var(--nav-bg-color)',
         padding: '20px',
         textAlign: 'center',
     },
     title: {
         fontSize: '3em',
         margin: '0',
-        color: '#f5f5f5',
+        color: 'var(--text-color-light)',
     },
     subtitle: {
         fontSize: '1.5em',
         margin: '10px 0 0',
-        color: '#aaa',
+        color: 'var(--nav-link-hover-color)',
     },
     mainContent: {
         flex: 1,
@@ -93,7 +93,7 @@ const styles = {
     sectionTitle: {
         fontSize: '2em',
         marginBottom: '10px',
-        color: '#f5f5f5',
+        color: 'var(--text-color-light)',
     },
     paragraph: {
         fontSize: '1.1em',
@@ -109,17 +109,18 @@ const styles = {
     reviewItem: {
         marginBottom: '10px',
         fontSize: '1.1em',
-        color: '#ddd',
+        color: 'var(--text-color-light)',
     },
     footer: {
-        backgroundColor: '#333',
+        backgroundColor: 'var(--nav-bg-color)',
         padding: '10px',
         textAlign: 'center',
     },
     footerText: {
         fontSize: '0.9em',
-        color: '#aaa',
+        color: 'var(--nav-link-hover-color)',
     },
 };
 
 export default Home;
+

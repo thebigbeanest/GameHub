@@ -1,18 +1,18 @@
 /* Root variables */
 :root {
-  --primary-color: #646cff;
-  --secondary-color: #535bf2;
-  --background-color: #242424;
-  --text-color-light: rgba(255, 255, 255, 0.87);
-  --text-color-dark: #213547;
-  --button-bg-color: #1a1a1a;
-  --button-hover-color: #646cff;
-  --button-light-bg-color: #f9f9f9;
-  --nav-bg-color: #333;
-  --nav-link-color: #fff;
-  --nav-link-hover-color: #aaa;
-  --input-bg-color: #2c2c2c;
-  --input-border-color: #444;
+  --primary-color: #00ff00; /* Lime green */
+  --secondary-color: #00cc00; /* Darker lime green */
+  --background-color: #000000; /* Pitch black */
+  --text-color-light: #00ff00; /* Lime green */
+  --text-color-dark: #009900; /* Darker lime green */
+  --button-bg-color: #003300; /* Dark green */
+  --button-hover-color: #005500; /* Slightly lighter green */
+  --button-light-bg-color: #003300; /* Dark green */
+  --nav-bg-color: #001a00; /* Very dark green */
+  --nav-link-color: #00ff00; /* Lime green */
+  --nav-link-hover-color: #00cc00; /* Darker lime green */
+  --input-bg-color: #003300; /* Dark green */
+  --input-border-color: #005500; /* Slightly lighter green */
 
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5;
@@ -55,10 +55,10 @@ body {
     background-color: #ffffff;
   }
   a:hover {
-    color: #747bff;
+    color: #00ff00;
   }
   button, .searchBar input, .searchBtn {
-    background-color: #f9f9f9;
-    color: #333;
+    background-color: #003300;
+    color: #00ff00;
   }
 }
