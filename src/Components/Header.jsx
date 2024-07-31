@@ -1,6 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from 'react';
-import Nav from './Nav'
 import axios from 'axios';
 
 export default function Header() {
@@ -28,6 +27,19 @@ export default function Header() {
   return (
     <div className="header">
       <h1>GameHub</h1>
+      <nav className="navbar">
+        <Link to="/category/mmo">MMO</Link>
+        <Link to="/category/strategy">Strategy</Link>
+        <Link to="/category/shooting">Shooting</Link>
+        <Link to="/category/action">Action</Link>
+        <Link to="/category/adventure">Adventure</Link>
+        <Link to="/category/puzzle">Puzzle</Link>
+        <Link to="/category/tower-defense">Tower Defense</Link>
+        <Link to="/category/idle">Idle</Link>
+        <Link to="/category/more">More</Link>
+        <Link to="/forums">Forums</Link>
+        <Link to="/developer-portal">Developer Portal</Link>
+      </nav>
       <button>
         <Link to='/CreateGamePage' className='neweventbutton'>Create Game</Link>
       </button>

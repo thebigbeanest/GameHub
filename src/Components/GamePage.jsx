@@ -70,7 +70,11 @@ const GamePage = () => {
           </head>
           <body>
             ${htmlCode}
-            <script>${jsCode}</script>
+            <script>
+              (function() {
+                ${jsCode}
+              })();
+            </script>
           </body>
           </html>
         `);
@@ -202,4 +206,5 @@ const GamePage = () => {
 };
 
 export default GamePage;
+
 

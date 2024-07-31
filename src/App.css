@@ -84,35 +84,28 @@
 }
 
 /* Navigation */
-.nav {
+.navbar {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   background-color: var(--nav-bg-color);
   padding: 10px 0;
   border-top: 2px solid var(--button-hover-color);
+  margin-top: 10px;
+  width: 100%;
 }
 
-.nav ul {
-  display: flex;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.nav li {
-  margin: 0 15px;
-}
-
-.nav a {
+.navbar a {
   color: var(--nav-link-color);
   font-weight: 500;
   text-decoration: none;
   font-size: 1em;
+  margin: 0 15px;
   transition: color 0.3s;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.nav a:hover {
+.navbar a:hover {
   color: var(--nav-link-hover-color);
 }
 
